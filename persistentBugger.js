@@ -15,13 +15,6 @@ function persistence(num, counter = 0) {
   }
 }
 
-// const persistence = (num, result = 0) => {
-//   const str = `${num}`;
-//   if (str.length === 1) return result;
-//   const mult = str.split("").reduce((a, b) => a * b);
-//   return persistence(mult, result + 1);
-// };
-
 const input = 39; //expect 3
 const input2 = 999; /// 4
 const input3 = 4; //expect 0
