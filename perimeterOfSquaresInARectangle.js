@@ -1,6 +1,3 @@
-let sum = 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21;
-// console.log(sum * 4);
-
 function perimeter(n) {
   let num = n + 1;
   let sum = 1;
@@ -16,4 +13,4 @@ function perimeter(n) {
 }
 
 const input = 5;
-console.log(perimeter(5));
+console.log(perimeter(input));
