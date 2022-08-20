@@ -11,20 +11,18 @@
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
 
 const alphabetPosition = (text) => {
-  const lcase = text.toLowerCase().split(" ");
+  const lCase = text.toLowerCase();
   let res = "";
 
-  console.log(lcase);
   console.log("a".charCodeAt());
   console.log("z".charCodeAt());
 
-  for (let i = 0; i < lcase.length; i++) {
-    let letters = lcase[i].split("");
-    for (let j = 0; j < letters.length; j++) {
-      if (letters[j].charCodeAt() >= 97 && letters[j].charCodeAt() <= 122) {
-        res += (letters[j].charCodeAt() - 96).toString();
-        res += " ";
-      }
+  for (let i = 0; i < lCase.length; i++) {
+    let num = lCase.charCodeAt(i);
+
+    if (num >= 97 && num <= 122) {
+      res += lCase[i].charCodeAt() - 96;
+      res += " ";
     }
   }
 
@@ -34,6 +32,3 @@ const alphabetPosition = (text) => {
 const text = "The sunset sets at twelve o' clock.";
 
 console.log(alphabetPosition(text));
-
-("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11 ");
-("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
