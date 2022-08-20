@@ -8,21 +8,27 @@
 // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 // XO("zzoo") => false
 
+// const XO = (str) => {
+//   //code here
+//   let lcase = str.toLowerCase();
+//   let x = "";
+//   let o = "";
+
+//   for (let i = 0; i < lcase.length; i++) {
+//     if (lcase[i] === "x") {
+//       x += lcase[i];
+//     } else if (lcase[i] === "o") {
+//       o += lcase[i];
+//     }
+//   }
+
+//   return x.length === o.length;
+// };
+
 const XO = (str) => {
   //code here
-  let lcase = str.toLowerCase();
-  let x = "";
-  let o = "";
-
-  for (let i = 0; i < lcase.length; i++) {
-    if (lcase[i] === "x") {
-      x += lcase[i];
-    } else if (lcase[i] === "o") {
-      o += lcase[i];
-    }
-  }
-
-  return x.length === o.length;
+  let lcase = str.toLowerCase().split("");
+  return lcase.filter((x) => x === "x") === lcase.filter((o) => o === "o");
 };
 
 const str = "ooxx";
