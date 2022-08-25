@@ -28,7 +28,30 @@
 // If you are given an array with multiple answers, return the lowest correct index.
 
 function findEvenIndex(arr) {
-  if (arr.length === 1) return arr[0];
+  let left = 0;
+  let right = 0;
+  const reducer = (accum, cv) => accum + cv;
 
-  for (let i = 0; i < arr.length; i++) {}
+  if (arr.length === 0) return -1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i == 0) {
+      right = arr.slice(1).reduce(reducer, 0);
+      if (right === i) {
+        return i;
+      }
+    } else {
+      left = arr.slice(0, i).reduce(reducer, 0);
+      right = arr.slice(i + 1).reduce(reducer, 0);
+      if (left == right) {
+        return i;
+      }
+    }
+  }
 }
+
+const arr = [1, 2, 3, 4, 3, 2, 1]; //-> 3
+const arr1 = [1, 100, 50, -51, 1, 1]; //-> 1
+
+console.log(findEvenIndex(arr));
+console.log(findEvenIndex(arr1));
